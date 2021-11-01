@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "nodemon ./src/index.js",
-        "compile:sass": "sass --watch src/scss:public/css"
+        "compile:sass": "sass --watch src/scss:src/public/css"
     },
     "keywords": [],
     "author": "",

@@ -1,2 +1,5 @@
-@import 'varibles';
+@import '01-settings/_settings-colors';
+@import '01-settings/_settings-breakpoints.scss';
+@import '02-generic/_generic-normalize.scss';
+@import '03-elements/_elements-links.scss';
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
