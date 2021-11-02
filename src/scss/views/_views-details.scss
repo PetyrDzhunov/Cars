@@ -1,7 +1,5 @@
-.car-card {
+.details-car-card {
     border: solid 1px $secondary;
-    height: 300px;
-    width: 300px;
     border-radius: 8px;
     margin-top: 30px;
     &__brand {}
@@ -9,11 +7,19 @@
         font-size: 22px;
     }
     &__cta {
+        button {
+            width: 33%;
+            margin-bottom: 20px;
+            &:hover {
+                background-color: $primary;
+            }
+        }
         a {
             text-decoration: none;
             font-size: 20px;
+            color: $white-primary;
             &:hover {
-                background-color: $primary;
+                color: $white-primary;
             }
         }
     }
