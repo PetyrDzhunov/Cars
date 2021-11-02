@@ -3,7 +3,7 @@ main {
     min-height: 82.6vh;
 }
 
-.register-form {
+.login-form {
     border: 3px solid $umber-color;
     border-radius: 12px;
     background-color: $secondary;
@@ -13,15 +13,15 @@ main {
         border: none;
         border-radius: 0px;
     }
-    label {
-        color: $white-primary;
-        font-size: 20px;
-    }
     &__title {
         color: $white-primary;
         border-bottom: 1px solid $grullo-color;
         width: 100%;
         text-align: center;
+    }
+    label {
+        color: $white-primary;
+        font-size: 20px;
     }
     &__group {
         width: 80%;
@@ -32,10 +32,11 @@ main {
         color: $white-primary !important;
         background-color: $umber-color !important;
         text-transform: uppercase;
-        &:hover {
-            transition: .5s ease-out;
-            background-color: $primary !important;
-            color: $white-primary !important;
-        }
+        transition: 0.5s ease-out;
+    }
+    &:hover {
+        transition: .5s ease-out;
+        background-color: $primary !important;
+        color: $white-primary !important;
     }
 }
