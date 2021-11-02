@@ -1,12 +1,22 @@
 .details-car-card {
-    border: solid 1px $secondary;
-    border-radius: 8px;
     margin-top: 30px;
     &__brand {}
     &__description {
         font-size: 22px;
     }
     &__cta {
+        @media screen and (max-width: 740px) {
+            display: flex;
+            flex-flow: column;
+            justify-items: center;
+            justify-content: center;
+            align-items: center;
+            @for $i from 1 through 3 {
+                button:nth-child(3n + #{$i}) {
+                    width: 70%;
+                }
+            }
+        }
         button {
             width: 33%;
             margin-bottom: 20px;
@@ -28,6 +38,12 @@
         img {
             height: 100%;
             width: 100%
+        }
+    }
+    @include for-phone-only {
+        &.mx-3 {
+            margin-right: 0px !important;
+            margin-left: 0px !important;
         }
     }
 }
