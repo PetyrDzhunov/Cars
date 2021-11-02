@@ -8,14 +8,25 @@ main {
 .register-form {
   border: 3px solid #5E503F;
   border-radius: 12px;
-  background-color: #A9927D;
+  background-color: #22333B;
   height: 500px;
   width: 400px;
 }
 @media (max-width: 575px) {
   .register-form {
     border: none;
+    border-radius: 0px;
   }
+}
+.register-form label {
+  color: #F2F4F3;
+  font-size: 20px;
+}
+.register-form__title {
+  color: #F2F4F3;
+  border-bottom: 1px solid #A9927D;
+  width: 100%;
+  text-align: center;
 }
 .register-form__group {
   width: 80%;
@@ -23,6 +34,59 @@ main {
 .register-form__button {
   width: 80%;
   border-radius: 8px;
+  color: #F2F4F3 !important;
+  background-color: #5E503F !important;
+  text-transform: uppercase;
+}
+.register-form__button:hover {
+  transition: 0.5s ease-out;
+  background-color: #0A0908 !important;
+  color: #F2F4F3 !important;
+}
+
+main {
+  background-color: #A9927D;
+  min-height: 82.6vh;
+}
+
+.login-form {
+  border: 3px solid #5E503F;
+  border-radius: 12px;
+  background-color: #22333B;
+  height: 500px;
+  width: 400px;
+}
+@media (max-width: 575px) {
+  .login-form {
+    border: none;
+    border-radius: 0px;
+  }
+}
+.login-form__title {
+  color: #F2F4F3;
+  border-bottom: 1px solid #A9927D;
+  width: 100%;
+  text-align: center;
+}
+.login-form label {
+  color: #F2F4F3;
+  font-size: 20px;
+}
+.login-form__group {
+  width: 80%;
+}
+.login-form__button {
+  width: 80%;
+  border-radius: 8px;
+  color: #F2F4F3 !important;
+  background-color: #5E503F !important;
+  text-transform: uppercase;
+  transition: 0.5s ease-out;
+}
+.login-form:hover {
+  transition: 0.5s ease-out;
+  background-color: #0A0908 !important;
+  color: #F2F4F3 !important;
 }
 
 html {
@@ -354,6 +418,28 @@ li {
     border-bottom: solid 1px #A9927D;
     width: 60%;
   }
+}
+
+.car-card {
+  border: solid 1px #22333B;
+  height: 300px;
+  width: 300px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+.car-card__description {
+  font-size: 22px;
+}
+.car-card__cta a {
+  text-decoration: none;
+  font-size: 20px;
+}
+.car-card__image-wrapper {
+  height: 100%;
+}
+.car-card__image-wrapper img {
+  height: 100%;
+  width: 100%;
 }
 
 footer p {
