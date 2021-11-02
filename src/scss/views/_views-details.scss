@@ -5,6 +5,9 @@
         font-size: 22px;
     }
     &__cta {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
         @media screen and (max-width: 740px) {
             display: flex;
             flex-flow: column;
@@ -18,7 +21,7 @@
             }
         }
         button {
-            width: 33%;
+            width: 45%;
             margin-bottom: 20px;
             &:hover {
                 background-color: $primary;

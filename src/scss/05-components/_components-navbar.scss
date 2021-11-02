@@ -46,7 +46,7 @@
             font-size: 20px;
         }
     }
-    @include for-tablet-landscape-up {
+    @media screen and (max-width:990px) {
         &-collapse {
             text-align: center;
             ul {
