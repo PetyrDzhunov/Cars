@@ -204,6 +204,14 @@ main {
   color: #F2F4F3 !important;
 }
 
+.error-page__description {
+  font-size: 18px;
+}
+.error-page__link {
+  text-decoration: none;
+  font-size: 18px;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
