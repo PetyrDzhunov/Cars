@@ -1,0 +1,26 @@
+main {}
+
+.car-card {
+    border: solid 1px $secondary;
+    height: 300px;
+    width: 300px;
+    border-radius: 8px;
+    margin-top: 30px;
+    &__brand {}
+    &__description {
+        font-size: 22px;
+    }
+    &__cta {
+        a {
+            text-decoration: none;
+            font-size: 20px;
+        }
+    }
+    &__image-wrapper {
+        height: 100%;
+        img {
+            height: 100%;
+            width: 100%
+        }
+    }
+}

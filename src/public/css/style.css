@@ -420,6 +420,28 @@ li {
   }
 }
 
+.car-card {
+  border: solid 1px #22333B;
+  height: 300px;
+  width: 300px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+.car-card__description {
+  font-size: 22px;
+}
+.car-card__cta a {
+  text-decoration: none;
+  font-size: 20px;
+}
+.car-card__image-wrapper {
+  height: 100%;
+}
+.car-card__image-wrapper img {
+  height: 100%;
+  width: 100%;
+}
+
 footer p {
   font-size: 24px;
 }
