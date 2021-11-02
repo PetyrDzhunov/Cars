@@ -465,6 +465,9 @@ li {
   text-decoration: none;
   font-size: 20px;
 }
+.car-card__cta a:hover {
+  background-color: #0A0908;
+}
 .car-card__image-wrapper {
   height: 100%;
 }

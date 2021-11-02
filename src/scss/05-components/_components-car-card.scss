@@ -12,6 +12,9 @@
         a {
             text-decoration: none;
             font-size: 20px;
+            &:hover {
+                background-color: $primary;
+            }
         }
     }
     &__image-wrapper {
