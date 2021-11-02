@@ -90,15 +90,36 @@ main {
 }
 
 .details-car-card {
-  border: solid 1px #22333B;
-  border-radius: 8px;
   margin-top: 30px;
 }
 .details-car-card__description {
   font-size: 22px;
 }
+.details-car-card__cta {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+@media screen and (max-width: 740px) {
+  .details-car-card__cta {
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .details-car-card__cta button:nth-child(3n+1) {
+    width: 70%;
+  }
+  .details-car-card__cta button:nth-child(3n+2) {
+    width: 70%;
+  }
+  .details-car-card__cta button:nth-child(3n+3) {
+    width: 70%;
+  }
+}
 .details-car-card__cta button {
-  width: 33%;
+  width: 45%;
   margin-bottom: 20px;
 }
 .details-car-card__cta button:hover {
@@ -118,6 +139,77 @@ main {
 .details-car-card__image-wrapper img {
   height: 100%;
   width: 100%;
+}
+@media (max-width: 575px) {
+  .details-car-card.mx-3 {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
+}
+
+main {
+  background-color: #A9927D;
+}
+
+.create-car-form {
+  border: 3px solid #5E503F;
+  border-radius: 12px;
+  background-color: #22333B;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 40%;
+}
+@media screen and (max-width: 1200px) {
+  .create-car-form {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 576px) {
+  .create-car-form {
+    width: 80%;
+  }
+}
+@media (max-width: 575px) {
+  .create-car-form {
+    border: none;
+    border-radius: 0px;
+    width: 100%;
+  }
+}
+.create-car-form__title {
+  color: #F2F4F3;
+  border-bottom: 1px solid #A9927D;
+  width: 100%;
+  text-align: center;
+}
+.create-car-form label {
+  color: #F2F4F3;
+  font-size: 20px;
+}
+.create-car-form__group {
+  width: 80%;
+}
+.create-car-form__button {
+  width: 80%;
+  border-radius: 8px;
+  color: #F2F4F3 !important;
+  background-color: #5E503F !important;
+  text-transform: uppercase;
+  transition: 0.5s ease-out;
+}
+.create-car-form__button:hover {
+  transition: 0.5s ease-out;
+  background-color: #0A0908 !important;
+  color: #F2F4F3 !important;
+}
+
+.error-page__description {
+  font-size: 18px;
+}
+.error-page__link {
+  text-decoration: none;
+  font-size: 18px;
 }
 
 html {
@@ -401,7 +493,7 @@ li {
   color: #F2F4F3 !important;
   font-size: 20px;
 }
-@media (max-width: 1000px) {
+@media screen and (max-width: 990px) {
   .navbar-collapse {
     text-align: center;
   }

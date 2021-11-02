@@ -1,0 +1,11 @@
+.error-page {
+    &__status {}
+    &__title {}
+    &__description {
+        font-size: 18px;
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 18px;
+    }
+}

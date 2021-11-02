@@ -1,0 +1,50 @@
+main {
+    background-color: $grullo-color;
+}
+
+.create-car-form {
+    border: 3px solid $umber-color;
+    border-radius: 12px;
+    background-color: $secondary;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 40%;
+    @media screen and (max-width: 1200px) {
+        width: 60%
+    }
+    @media screen and (max-width:800px) and (min-width:576px) {
+        width: 80%;
+    }
+    @include for-phone-only {
+        border: none;
+        border-radius: 0px;
+        width: 100%;
+    }
+    &__title {
+        color: $white-primary;
+        border-bottom: 1px solid $grullo-color;
+        width: 100%;
+        text-align: center;
+    }
+    label {
+        color: $white-primary;
+        font-size: 20px;
+    }
+    &__group {
+        width: 80%;
+    }
+    &__button {
+        width: 80%;
+        border-radius: 8px;
+        color: $white-primary !important;
+        background-color: $umber-color !important;
+        text-transform: uppercase;
+        transition: 0.5s ease-out;
+        &:hover {
+            transition: .5s ease-out;
+            background-color: $primary !important;
+            color: $white-primary !important;
+        }
+    }
+}
