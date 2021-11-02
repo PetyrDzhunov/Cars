@@ -33,10 +33,10 @@ main {
         background-color: $umber-color !important;
         text-transform: uppercase;
         transition: 0.5s ease-out;
-    }
-    &:hover {
-        transition: .5s ease-out;
-        background-color: $primary !important;
-        color: $white-primary !important;
+        &:hover {
+            transition: .5s ease-out;
+            background-color: $primary !important;
+            color: $white-primary !important;
+        }
     }
 }

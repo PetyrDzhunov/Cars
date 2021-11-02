@@ -83,7 +83,7 @@ main {
   text-transform: uppercase;
   transition: 0.5s ease-out;
 }
-.login-form:hover {
+.login-form__button:hover {
   transition: 0.5s ease-out;
   background-color: #0A0908 !important;
   color: #F2F4F3 !important;
