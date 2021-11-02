@@ -1,5 +1,30 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+main {
+  background-color: #A9927D;
+  min-height: 82.6vh;
+}
+
+.register-form {
+  border: 3px solid #5E503F;
+  border-radius: 12px;
+  background-color: #A9927D;
+  height: 500px;
+  width: 400px;
+}
+@media (max-width: 575px) {
+  .register-form {
+    border: none;
+  }
+}
+.register-form__group {
+  width: 80%;
+}
+.register-form__button {
+  width: 80%;
+  border-radius: 8px;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -241,7 +266,7 @@ li {
   transition: all 0.5s;
 }
 .navbar ul li a:hover {
-  color: #FF00FF;
+  color: #A9927D;
 }
 .navbar ul li a {
   position: relative;
@@ -250,6 +275,7 @@ li {
 .navbar ul li a:after {
   display: block;
   position: absolute;
+  border-radius: 4px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -259,7 +285,7 @@ li {
   height: 1px;
   content: ".";
   color: transparent;
-  background: #FF00FF !important;
+  background: #A9927D;
   visibility: none;
   opacity: 0;
   z-index: -1;
@@ -308,6 +334,7 @@ li {
 .navbar-brand {
   width: 120px;
   height: 72px;
+  margin-top: 15px;
 }
 .navbar-brand img {
   width: 100%;
@@ -327,6 +354,10 @@ li {
     border-bottom: solid 1px #A9927D;
     width: 60%;
   }
+}
+
+footer p {
+  font-size: 24px;
 }
 
 /*!
