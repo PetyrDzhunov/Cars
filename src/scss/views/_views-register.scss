@@ -1,0 +1,22 @@
+main {
+    background-color: $grullo-color;
+    min-height: 82.6vh;
+}
+
+.register-form {
+    border: 3px solid $umber-color;
+    border-radius: 12px;
+    background-color: $grullo-color;
+    height: 500px;
+    width: 400px;
+    @include for-phone-only {
+        border: none;
+    }
+    &__group {
+        width: 80%;
+    }
+    &__button {
+        width: 80%;
+        border-radius: 8px;
+    }
+}
