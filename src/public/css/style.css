@@ -497,9 +497,6 @@ li {
   font-size: 28px;
   margin-right: 10px;
 }
-.navbar-collapse:last-child {
-  margin-right: 120px;
-}
 @media screen and (max-width: 990px) {
   .navbar-collapse {
     text-align: center;
@@ -517,7 +514,6 @@ li {
   .navbar-brand {
     height: auto;
     width: 150px;
-    margin-right: 60px;
   }
   .navbar-brand img {
     height: 60px;
@@ -529,7 +525,6 @@ li {
   width: 120px;
   height: 72px;
   margin-top: 15px;
-  margin-left: 120px;
 }
 .navbar-brand img {
   width: 100%;
