@@ -447,6 +447,9 @@ li {
   margin: 0;
 }
 
+.navbar {
+  height: 120px;
+}
 .navbar ul li a,
 .navbar ul li a:after,
 .navbar ul li a:before {
@@ -484,14 +487,18 @@ li {
 }
 .navbar-logo {
   width: 130px;
-  margin-left: 40px;
+  margin-left: 100px;
 }
 .navbar-collapse {
   margin-right: 40px;
 }
 .navbar-collapse .nav-link {
   color: #F2F4F3 !important;
-  font-size: 20px;
+  font-size: 28px;
+  margin-right: 10px;
+}
+.navbar-collapse:last-child {
+  margin-right: 120px;
 }
 @media screen and (max-width: 990px) {
   .navbar-collapse {
@@ -522,6 +529,7 @@ li {
   width: 120px;
   height: 72px;
   margin-top: 15px;
+  margin-left: 120px;
 }
 .navbar-brand img {
   width: 100%;
