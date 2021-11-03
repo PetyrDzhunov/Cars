@@ -4,7 +4,9 @@
     width: 300px;
     border-radius: 8px;
     margin-top: 30px;
-    &__brand {}
+    &__brand {
+        border-bottom: solid 1px $umber-color;
+    }
     &__description {
         font-size: 22px;
     }

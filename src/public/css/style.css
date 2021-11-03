@@ -717,6 +717,9 @@ li {
   border-radius: 8px;
   margin-top: 30px;
 }
+.car-card__brand {
+  border-bottom: solid 1px #5E503F;
+}
 .car-card__description {
   font-size: 22px;
 }
