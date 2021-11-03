@@ -1,93 +1,59 @@
 .carousel-item {
-    height: 85vh;
+    min-height: 100vh;
     min-height: 300px;
     width: 100%;
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    position: relative;
+    -webkit-background-size: contain;
+    background-size: contain;
 }
 
-.carousel__description {
-    position: absolute;
-    top: 10%;
-    left: 35%;
-    font-size: 100px;
-    font-weight: bolder;
-    color: #FF7F50;
-    &-2 {
-        position: absolute;
-        top: 10%;
-        left: 35%;
-        font-size: 100px;
+.carousel-button.btn.btn-lg {
+    background-color: #00FA9A;
+    padding: 40px 60px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    a {
+        color: $primary;
         font-weight: bolder;
-        color: #FF7F50;
-        margin-top: 100px;
-    }
-}
-
-@media screen and (max-width:1160px) {
-    .carousel__description {
-        font-size: 80px;
-        left: 25%;
-        &-2 {
-            font-size: 80px;
-            left: 25%;
-        }
-    }
-}
-
-@media screen and (max-width:961px) {
-    .carousel__description {
-        font-size: 60px;
-        top: 5%;
-        &-2 {
-            font-size: 60px;
-            top: 5%;
-            margin-top: 50px;
-        }
-    }
-}
-
-@media screen and (max-width:800px) {
-    .carousel__description {
-        top: 5%;
-        &-2 {
-            top: 5%;
-        }
-    }
-}
-
-@media screen and (max-width:600px) {
-    .carousel__description {
-        top: 5%;
-        font-size: 60px;
-        &-2 {
-            top: 5%;
-            font-size: 50px
-        }
-    }
-}
-
-@media screen and (max-width:475px) {
-    .carousel__description {
-        top: 5%;
         font-size: 40px;
-        &-2 {
-            top: 5%;
-            font-size: 40px;
+        text-align: center;
+        text-decoration: none;
+    }
+    @include for-tablet-landscape-up {
+        margin-bottom: 10px;
+        padding: 20px 30px;
+        a {
+            color: $primary;
+            font-weight: bolder;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
+    @include for-phone-only {
+        margin-bottom: 0px !important;
+        padding: 20px 30px;
+        a {
+            color: $primary;
+            font-weight: bolder;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
         }
     }
 }
 
-@media screen and (max-width:360px) {
-    .carousel__description {
-        top: 5%;
-        font-size: 30px;
-        &-2 {
-            top: 5%;
-            font-size: 30px;
-        }
+.carousel-title {
+    font-size: 150px;
+    margin-bottom: 100px;
+    @include for-tablet-landscape-up {
+        font-size: 80px;
+        margin-bottom: 10px;
+    }
+    @include for-phone-only {
+        font-size: 40px;
+        margin-bottom: 0px;
     }
 }
 
@@ -110,50 +76,37 @@
         height: auto;
     }
     .carousel-control-prev-icon {
-        margin-bottom: 400px;
+        margin-bottom: 800px;
     }
     .carousel-control-next-icon {
-        margin-bottom: 400px;
+        margin-bottom: 800px;
     }
 }
 
-@media (max-width:750px) {
+@media screen and (max-width:750px) {
     .carousel-item img {
         width: 100%;
         height: auto;
     }
     .carousel-control-prev-icon {
-        margin-bottom: 500px;
+        margin-bottom: 1000px;
     }
     .carousel-control-next-icon {
-        margin-bottom: 500px;
+        margin-bottom: 1000px;
     }
 }
 
-@media (max-width:500px) {
-    .carousel-item img {
-        width: 100%;
-        height: auto;
-    }
-    .carousel-control-prev-icon {
-        margin-bottom: 500px;
-    }
-    .carousel-control-next-icon {
-        margin-bottom: 500px;
-    }
-}
-
-@media (max-width: 470px) {
+@media screen and (max-width: 470px) {
     .carousel-item img {
         max-width: 300%;
-        width: 150%;
+        width: 100%;
         min-height: 300px;
     }
     .carousel-control-prev-icon {
-        margin-bottom: 500px;
+        margin-bottom: 1000px;
     }
     .carousel-control-next-icon {
-        margin-bottom: 500px;
+        margin-bottom: 1000px;
     }
 }
 

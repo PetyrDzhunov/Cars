@@ -72,6 +72,33 @@
             }
         }
     }
+    @media screen and (max-width:1200px) {
+        &-collapse {
+            text-align: center;
+            ul {
+                display: flex;
+                justify-items: center;
+                align-items: center;
+                justify-content: center;
+            }
+            .nav-item {
+                font-size: 32px;
+                padding-bottom: 8px;
+                padding-top: 8px;
+                border-bottom: solid 1px $white-primary;
+                width: 75%;
+            }
+        }
+        &-brand {
+            height: auto;
+            width: 150px;
+            img {
+                height: 60px;
+                width: 120px;
+                margin-left: 0px;
+            }
+        }
+    }
     &-brand {
         width: 120px;
         height: 72px;
