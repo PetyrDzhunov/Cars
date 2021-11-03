@@ -1,22 +1,22 @@
 <main class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center">
-    <form class="d-flex justify-content-center align-items-center flex-column justify-items-center register-form">
+    <form class="d-flex justify-content-center align-items-center flex-column justify-items-center register-form" method="post" action="/auth/register">
         <h1 class="register-form__title">Register</h1>
         <div class="form-group register-form__group mt-3">
-            <label for="exampleInputEmail1">First name</label>
-            <input type="text" class="form-control mb-2" aria-describedby="emailHelp" placeholder="First name...">
+            <label>First name</label>
+            <input name="firstName" type="text" class="form-control mb-2" placeholder="First name...">
         </div>
         <div class="form-group register-form__group">
-            <label for="exampleInputEmail1">Last name</label>
-            <input type="text" class="form-control mb-2" aria-describedby="emailHelp" placeholder="Last name...">
+            <label>Last name</label>
+            <input type="text" name="lastName" class="form-control mb-2" placeholder="Last name...">
         </div>
         <div class="form-group register-form__group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" name="email" class="form-control mb-2" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-light">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group register-form__group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control mb-2" id="exampleInputPassword1" placeholder="Password">
+            <input name="password" type="password" class="form-control mb-2"  placeholder="Password">
         </div>
 
         <button type="submit" class="btn register-form__button mt-3">Register</button>
