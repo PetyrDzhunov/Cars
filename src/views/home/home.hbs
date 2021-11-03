@@ -1,15 +1,47 @@
-<main class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center flex-wrap">
-    /* each cars should be displayed here with my view engine use car-card partial */
-    <div class='car-card d-flex flex-column mx-3'>
-        <h1 class="car-card__brand text-center text-white">Audi</h1>
-        <p class="car-card__description text-center text-white">Fast as the winter</p>
-        <div class='car-card__image-wrapper'>
-            <img src='https://img.drivemag.net/media/default/0001/98/audi-r8-v10-2096-default-large.jpeg' />
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="">
+                    <p class="carousel__description">In this website</p>
+                </div>
+                <img class="d-block w-100" src="https://wallpaperaccess.com/full/45726.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <div class="">
+                    <p class="carousel__description">You can find</p>
+                </div>
+                <img class="d-block w-100" src="https://images5.alphacoders.com/375/thumb-1920-375840.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <div class="">
+                    <p class="carousel__description">any car that</p>
+                    <p class="carousel__description-2">fits your needs!</p>
+                </div>
+                <img class="d-block w-100" src="https://i.pinimg.com/originals/ec/38/87/ec38872c0aff96240703e32e0903b886.jpg" alt="Third slide">
+            </div>
         </div>
-        <div class='car-card__cta text-center text-white'>
-            <a href='/cars/{{_id}}/details' class='det-link btn btn-secondary w-100 text-center text-white'>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+
+    </div>
+<main class="col-lg-12 col-sm-12 d-flex justify-content-center align-items-center flex-wrap">
+        /* each cars should be displayed here with my view engine use car-card partial */
+        <div class='car-card d-flex flex-column mx-3'>
+            <h1 class="car-card__brand text-center text-white">Audi</h1>
+            <p class="car-card__description text-center text-white">Fast as the winter</p>
+            <div class='car-card__image-wrapper'>
+                <img src='https://img.drivemag.net/media/default/0001/98/audi-r8-v10-2096-default-large.jpeg' />
+            </div>
+            <div class='car-card__cta text-center text-white'>
+                <a href='/cars/{{_id}}/details' class='det-link btn btn-secondary w-100 text-center text-white'>
 				 Details
 				</a>
+            </div>
         </div>
-    </div>
 </main>
