@@ -1,4 +1,5 @@
 .navbar {
+    height: 120px;
     ul li a,
     ul li a:after,
     ul li a:before {
@@ -36,14 +37,15 @@
     }
     &-logo {
         width: 130px;
-        margin-left: 40px;
+        margin-left: 100px;
     }
     &-collapse {
         margin-right: 40px;
         &.nav-item {}
         .nav-link {
             color: $white-primary !important;
-            font-size: 20px;
+            font-size: 28px;
+            margin-right: 10px;
         }
     }
     @media screen and (max-width:990px) {
@@ -63,7 +65,33 @@
         &-brand {
             height: auto;
             width: 150px;
-            margin-right: 60px;
+            img {
+                height: 60px;
+                width: 120px;
+                margin-left: 0px;
+            }
+        }
+    }
+    @media screen and (max-width:1200px) {
+        &-collapse {
+            text-align: center;
+            ul {
+                display: flex;
+                justify-items: center;
+                align-items: center;
+                justify-content: center;
+            }
+            .nav-item {
+                font-size: 32px;
+                padding-bottom: 8px;
+                padding-top: 8px;
+                border-bottom: solid 1px $white-primary;
+                width: 75%;
+            }
+        }
+        &-brand {
+            height: auto;
+            width: 150px;
             img {
                 height: 60px;
                 width: 120px;
