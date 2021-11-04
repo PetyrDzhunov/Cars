@@ -2,15 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 main {
   background-color: #A9927D;
-  min-height: 82.6vh;
+  min-height: 94.6vh;
 }
 
 .register-form {
   border: 3px solid #5E503F;
   border-radius: 12px;
   background-color: #22333B;
-  height: 500px;
-  width: 400px;
+  min-height: 700px;
+  width: 600px;
 }
 @media (max-width: 575px) {
   .register-form {
@@ -19,8 +19,17 @@ main {
   }
 }
 .register-form label {
-  color: #F2F4F3;
+  color: #A9927D;
   font-size: 20px;
+  padding-bottom: 4px;
+  margin-top: 12px;
+}
+.register-form input {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.register-form input[placeholder] {
+  font-size: 24px;
 }
 .register-form__title {
   color: #F2F4F3;
@@ -36,6 +45,9 @@ main {
   border-radius: 8px;
   color: #F2F4F3 !important;
   background-color: #5E503F !important;
+  padding: 10px 18px !important;
+  font-size: 28px !important;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 .register-form__button:hover {
@@ -46,7 +58,7 @@ main {
 
 main {
   background-color: #A9927D;
-  min-height: 82.6vh;
+  min-height: 94.6vh;
 }
 
 .login-form {
@@ -54,7 +66,7 @@ main {
   border-radius: 12px;
   background-color: #22333B;
   height: 500px;
-  width: 400px;
+  width: 500px;
 }
 @media (max-width: 575px) {
   .login-form {
@@ -69,8 +81,17 @@ main {
   text-align: center;
 }
 .login-form label {
-  color: #F2F4F3;
+  color: #A9927D;
   font-size: 20px;
+  padding-bottom: 4px;
+  margin-top: 12px;
+}
+.login-form input {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.login-form input[placeholder] {
+  font-size: 24px;
 }
 .login-form__group {
   width: 80%;
@@ -78,6 +99,9 @@ main {
 .login-form__button {
   width: 80%;
   border-radius: 8px;
+  padding: 10px 18px !important;
+  font-size: 28px !important;
+  letter-spacing: 3px;
   color: #F2F4F3 !important;
   background-color: #5E503F !important;
   text-transform: uppercase;

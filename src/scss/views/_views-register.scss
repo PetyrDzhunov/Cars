@@ -1,21 +1,31 @@
 main {
     background-color: $grullo-color;
-    min-height: 82.6vh;
+    min-height: 94.6vh;
 }
 
 .register-form {
     border: 3px solid $umber-color;
     border-radius: 12px;
     background-color: $secondary;
-    height: 500px;
-    width: 400px;
+    min-height: 700px;
+    width: 600px;
     @include for-phone-only {
         border: none;
         border-radius: 0px;
     }
     label {
-        color: $white-primary;
+        color: $grullo-color;
         font-size: 20px;
+        padding-bottom:4px;
+        margin-top:12px;
+    }
+
+    input{
+        padding-top:12px;
+        padding-bottom:12px;
+    }
+    input[placeholder]{
+        font-size:24px;
     }
     &__title {
         color: $white-primary;
@@ -31,6 +41,9 @@ main {
         border-radius: 8px;
         color: $white-primary !important;
         background-color: $umber-color !important;
+        padding:10px 18px !important;
+        font-size : 28px !important;
+        letter-spacing: 3px;
         text-transform: uppercase;
         &:hover {
             transition: .5s ease-out;
