@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const { JWT_SECRET } = require('../constants');
-const jwt = require('jsonwebtoken');
+const jwt = require('../utils/jwt');
 
 exports.register = (userData) => {
     return User.create(userData);
