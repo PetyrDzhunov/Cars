@@ -44,6 +44,11 @@ userSchema.pre('save', function(next) {
         .catch(err => console.log('Failed to hash password', err));
 });
 
+userSchema.method('validatePassword', function(password) {
+    //return a promise which return true/false -> work with it at authService
+    return bcrypt.compare(password, this.password);
+});
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
