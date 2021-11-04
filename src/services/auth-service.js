@@ -2,8 +2,9 @@ const User = require('../models/User');
 const { JWT_SECRET } = require('../constants');
 const jwt = require('../utils/jwt');
 
-exports.register = (userData) => {
-    const existing = User.findOne(userData.email);
+exports.register = async(userData) => {
+    console.log(userData.email);
+    const existing = await User.findOne({ email: userData.email });
     if (existing) {
         throw new Error('Account with this email has already been created!');
     };

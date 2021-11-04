@@ -36,6 +36,7 @@ main {
   border-bottom: 1px solid #A9927D;
   width: 100%;
   text-align: center;
+  padding-bottom: 12px;
 }
 .register-form__group {
   width: 80%;
@@ -66,7 +67,7 @@ main {
   border-radius: 12px;
   background-color: #22333B;
   height: 500px;
-  width: 500px;
+  width: 600px;
 }
 @media (max-width: 575px) {
   .login-form {
@@ -79,6 +80,7 @@ main {
   border-bottom: 1px solid #A9927D;
   width: 100%;
   text-align: center;
+  padding-bottom: 12px;
 }
 .login-form label {
   color: #A9927D;
@@ -655,7 +657,7 @@ li {
 }
 
 .carousel-button.btn.btn-lg, .btn-group-lg > .carousel-button.btn {
-  background-color: #03DAC5;
+  background-color: #A9927D;
   padding: 40px 60px;
   border-radius: 12px;
   outline: none;
