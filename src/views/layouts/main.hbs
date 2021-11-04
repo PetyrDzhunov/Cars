@@ -30,6 +30,16 @@
             </nav>
         </div>
 
+        {{#if errors}}
+       <div class="notifications notifications__error alert alert-warning alert-dismissible fade show d-flex flex-column" role="alert">
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {{#each errors}}
+           <p class="notifications__description">{{this}}</p> 
+            {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
     {{{body}}}
     
     <footer class="text-center text-white bg-dark col-lg-12 col-sm-12">
