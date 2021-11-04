@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const authService = require('../services/auth-service');
+const { parseError } = require('../views/utils/parsers');
 
 
 router.get('/register', (req, res) => {
@@ -8,8 +9,17 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async(req, res) => {
     const { firstName, lastName, email, password } = req.body;
-    await authService.register({ firstName, lastName, email, password });
-    res.redirect('/auth/login');
+    try {
+        await authService.register({ firstName, lastName, email, password });
+        res.redirect('/auth/login');
+    } catch (err) {
+        // const errors = parseError(err);
+        const ctx = {
+            errors: parseError(err),
+        }
+        res.render('auth/register', ctx);
+    }
+
 });
 
 
