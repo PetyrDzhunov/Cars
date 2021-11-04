@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const authService = require('../services/auth-service');
-const { parseError } = require('../views/utils/parsers');
+const { parseError } = require('../utils/parsers');
 const { AUTH_COOKIE_NAME } = require('../constants');
 
 

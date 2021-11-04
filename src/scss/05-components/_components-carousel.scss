@@ -5,31 +5,32 @@
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
-    
 }
+
 .carousel-caption {
-    top: 180px; 
+    top: 180px;
     bottom: auto;
 }
+
 .carousel-button.btn.btn-lg {
-    background-color: #03DAC5;
+    background-color: $grullo-color;
     padding: 40px 60px;
     border-radius: 12px;
     outline: none;
     border: none;
-    margin-top:40px;
+    margin-top: 40px;
     a {
         color: $white-primary;
         font-weight: bolder;
         font-size: 40px;
         text-align: center;
         text-decoration: none;
-        &:hover{
-            color:$secondary;
+        &:hover {
+            color: $secondary;
         }
     }
-    @media screen and (max-width:750px){
-        margin-top:30px;
+    @media screen and (max-width:750px) {
+        margin-top: 30px;
     }
     @include for-tablet-landscape-up {
         margin-bottom: 10px;
@@ -45,7 +46,7 @@
     @include for-phone-only {
         margin-bottom: 0px !important;
         padding: 20px 30px;
-        margin-top:30px;
+        margin-top: 30px;
         a {
             color: $primary;
             font-weight: bolder;
@@ -54,34 +55,33 @@
             text-decoration: none;
         }
     }
-    @media screen and (min-width:750px) and (max-width:1000px){
-        margin-top:40px;
+    @media screen and (min-width:750px) and (max-width:1000px) {
+        margin-top: 40px;
     }
 }
 
-
 .carousel-title {
-    &__1{
-        &-span{
-            color:$grullo-color;
+    &__1 {
+        &-span {
+            color: $grullo-color;
         }
     }
     font-size:120px;
     font-weight:thin;
     word-spacing: 20px;
-    font-family: 'Bangers', cursive;
+    font-family: 'Bangers',
+    cursive;
     color:#03DAC5;
     @include for-tablet-landscape-up {
         font-size: 60px;
     }
     @media screen and (max-width:800px) {
-        font-size:40px;
+        font-size: 40px;
     }
-    
     @include for-phone-only {
         font-size: 30px;
         margin-bottom: 0px;
-        word-spacing:5px;
+        word-spacing: 5px;
     }
 }
 
@@ -98,20 +98,17 @@
     font-size: 40px;
 }
 
-
 @media screen and (min-width:750px) and (max-width:1000px) {
     .carousel-item img {
-        width:100%;
-        height:800px !important;
+        width: 100%;
+        height: 800px !important;
     }
-
     .carousel-control-prev-icon {
         margin-bottom: 500px;
     }
     .carousel-control-next-icon {
         margin-bottom: 500px;
     }
-  
 }
 
 @media screen and (max-width:750px) {
@@ -128,10 +125,9 @@
 }
 
 @media screen and (max-width: 470px) {
-
     .carousel-item img {
         width: 100%;
-        min-height:500px;
+        min-height: 500px;
     }
     .carousel-control-prev-icon {
         margin-bottom: 800px;
