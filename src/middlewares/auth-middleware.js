@@ -17,6 +17,4 @@ exports.isAuth = (req, res, next) => {
     } else {
         next();
     }
-
-
 };
