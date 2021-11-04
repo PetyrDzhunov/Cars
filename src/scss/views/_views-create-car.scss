@@ -2,10 +2,11 @@
     border: 3px solid $umber-color;
     border-radius: 12px;
     background-color: $secondary;
-    height: 1000px;
+    height: 1020px;
     margin-top: auto;
-    padding-top: 20px;
+    padding-top: 25px;
     width: 40%;
+    padding-bottom: 25px;
     @media screen and (max-width: 1200px) {
         width: 75%
     }
@@ -26,9 +27,9 @@
     }
     label {
         color: $grullo-color;
-        font-size: 20px;
+        font-size: 22px;
         padding-bottom: 4px;
-        margin-top: 12px;
+        margin-top: 8px;
         text-align: center;
         display: block;
     }
@@ -37,7 +38,7 @@
         padding-bottom: 8px;
     }
     input[placeholder] {
-        font-size: 18px;
+        font-size: 22px;
     }
     &__group {
         width: 80%;
