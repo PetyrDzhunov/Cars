@@ -41,15 +41,21 @@ router.get('/:carId/details', async(req, res) => {
     try {
         const car = await carService.getCarById(carId);
         await carService.addView(carId);
-        const isOwner = car.owner == req.user?._id;
-        const {favouriteCars} = await userService.getFavouriteCarsByUserId(req.user._id);
-        const hasItInFavourites = favouriteCars.some((car) => car._id == carId);
-        const context = {
-            ...car,
-            isOwner,
-            hasItInFavourites,
-            title:`${car.brand} ${car.model} details page`
-        };
+        let context;
+        if(req.user) {
+            const isOwner = car.owner == req.user?._id;
+            const {favouriteCars} = await userService.getFavouriteCarsByUserId(req.user?._id);
+            const hasItInFavourites = favouriteCars.some((car) => car._id == carId);
+            context = {
+                ...car,
+                isOwner,
+                hasItInFavourites,
+                title:`${car.brand} ${car.model} details page`
+            };
+        } else {
+            context = {...car,title:`${car.brand} ${car.model} details page`}
+        }
+       
         res.render('cars/details', context );
     } catch (err) {
         const error = parseError(err);
@@ -64,7 +70,7 @@ router.get('/:carId/delete', isUser, async(req,res) => {
         await carService.deleteById(req.params.carId,req.user._id);
         res.redirect('/cars/my-cars');
     }catch(error){
-        const errors = parseError(err);
+        const errors = parseError(error);
         res.render(`cars/details`,errors);
     }
 });
@@ -85,8 +91,8 @@ router.post('/:carId/edit',isUser,async(req,res)=>{
         res.redirect('/cars/my-cars');
     }catch(error){
         const context = {
-            errors:parseError(err),
-            ...car,
+            errors:parseError(error),
+            
         }
         res.render('cars/edit',context);
     };
