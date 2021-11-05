@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const carService = require('../services/cars-service');
+const userService = require('../services/user-service');
 const { parseError } = require('../utils/parsers');
 const { isUser } = require('../middlewares/guards-middleware');
 
@@ -86,6 +87,29 @@ router.post('/:carId/edit',isUser,async(req,res)=>{
         }
         res.render('cars/edit',context);
     };
+});
+
+router.get('/:carId/addToFavourites',isUser,async(req,res)=>{
+    try{
+        await carService.addToFavourites(req.params.carId,req.user._id);
+        const favouriteCars = await userService.getFavouriteCarsByUserId(req.user._id);
+        const context = {
+            favouriteCars,
+            title:"My Favourite Cars"
+        };
+        res.render('cars/favourite-cars',context);
+    }catch(err){
+     res.redirect(`/cars/${req.params.carId}/details`);
+    }
+});
+
+router.get('/favourite-cars',async (req,res)=>{
+    const favouriteCars = await userService.getFavouriteCarsByUserId(req.user._id);
+    const context = {
+        ...favouriteCars,
+        title:"My Favourite Cars"
+    };
+    res.render('cars/favourite-cars',context);
 });
 
 

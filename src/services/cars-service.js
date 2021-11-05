@@ -32,6 +32,10 @@ const addView = (carId) => {
     return Car.findByIdAndUpdate(carId, { $inc: { views: 1 } })
 };
 
+const addToFavourites = (carId, userId) => {
+    return User.findByIdAndUpdate(userId, { $push: { favouriteCars: carId } });
+};
+
 
 
 
@@ -43,5 +47,6 @@ module.exports = {
     getCarById,
     deleteById,
     editCarById,
-    addView
+    addView,
+    addToFavourites,
 }
