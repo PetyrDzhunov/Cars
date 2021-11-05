@@ -25,12 +25,12 @@ const carSchema = new mongoose.Schema({
     },
     engine: {
         type: String,
-        enum: ['diesel', 'gasoline', 'electric'],
-        required: [true, 'You must enter engine between diesel , gasoline or electric']
+        enum: ['diesel', 'petrol', 'electric'],
+        required: [true, 'You must enter engine between diesel , petrol or electric']
     },
-    transmission: {
+    gearbox: {
         type: String,
-        required: [true, 'You must enter transmission between automatic and manual'],
+        required: [true, 'You must enter gearbox between automatic and manual'],
         enum: ['automatic', 'manual'],
         trim: true
     },
