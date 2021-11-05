@@ -15,6 +15,14 @@ router.post('/create', async(req, res) => {
         const ctx = {
             errors: parseError(err),
             title: "Create new car sale",
+            brand,
+            model,
+            region,
+            yearOfManufacture,
+            engine,
+            gearbox,
+            imageUrl,
+            price
         };
         res.render('cars/create', ctx);
     }
