@@ -17,9 +17,6 @@
         color: #03DAC5;
     }
     &__cta {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
         @media screen and (max-width: 740px) {
             display: flex;
             flex-flow: column;
@@ -66,5 +63,20 @@
             margin-right: 0px !important;
             margin-left: 0px !important;
         }
+    }
+    &__hasFavourite {
+        margin-right: 12px;
+        @include for-phone-only {
+            flex-direction: column !important;
+        }
+    }
+    &__favourite {
+        font-size: 32px;
+        margin-bottom: 12px;
+        line-height: 30px;
+    }
+    &__icon {
+        font-size: 32px;
+        margin-bottom: 12px;
     }
 }
