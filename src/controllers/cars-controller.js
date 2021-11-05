@@ -7,9 +7,9 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/create', async(req, res) => {
-    const { brand, model, region, yearOfManufacture, engine, transmission, imageUrl, price } = req.body;
+    const { brand, model, region, yearOfManufacture, engine, gearbox, imageUrl, price } = req.body;
     try {
-        const car = await carService.createOffer({ brand, model, region, yearOfManufacture, engine, transmission, imageUrl, price, owner: req.user._id }, req.user_id);
+        const car = await carService.createOffer({ brand, model, region, yearOfManufacture, engine, gearbox, imageUrl, price, owner: req.user._id });
         res.redirect('/');
     } catch (err) {
         const ctx = {
@@ -18,6 +18,11 @@ router.post('/create', async(req, res) => {
         };
         res.render('cars/create', ctx);
     }
+});
+
+router.get('/my-cars', async(req, res) => {
+    const cars = await carService.getAllCarsByUserId(req.user._id);
+    res.render('cars/my-cars', { title: 'My cars page', cars });
 });
 
 module.exports = router;

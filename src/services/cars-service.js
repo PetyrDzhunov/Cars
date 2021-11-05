@@ -8,9 +8,19 @@ const createOffer = async(carData) => {
     return car;
 };
 
+const getAllCars = () => {
+    return Car.find().lean();
+};
+
+const getAllCarsByUserId = (userId) => {
+    return Car.find({ owner: userId }).lean();
+}
+
 
 
 
 module.exports = {
-    createOffer
+    createOffer,
+    getAllCars,
+    getAllCarsByUserId
 }
