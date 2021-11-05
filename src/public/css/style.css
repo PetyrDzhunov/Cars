@@ -116,10 +116,22 @@ main {
 }
 
 .details-car-card {
-  margin-top: 30px;
+  height: 550px;
+  margin-top: 100px;
+}
+.details-car-card__brand {
+  color: #F2F4F3;
 }
 .details-car-card__description {
-  font-size: 22px;
+  font-size: 40px;
+  line-height: 30px;
+  color: #F2F4F3 !important;
+}
+.details-car-card__description-title {
+  font-size: 40px;
+}
+.details-car-card .first-letter {
+  color: #03DAC5;
 }
 .details-car-card__cta {
   display: flex;
@@ -134,30 +146,32 @@ main {
     justify-content: center;
     align-items: center;
   }
-  .details-car-card__cta button:nth-child(3n+1) {
-    width: 70%;
-  }
-  .details-car-card__cta button:nth-child(3n+2) {
-    width: 70%;
-  }
-  .details-car-card__cta button:nth-child(3n+3) {
-    width: 70%;
-  }
 }
 .details-car-card__cta button {
-  width: 45%;
+  width: 100%;
   margin-bottom: 20px;
+  letter-spacing: 3px;
+  font-size: 32px;
+  color: #F2F4F3;
 }
 .details-car-card__cta button:hover {
   background-color: #0A0908;
 }
 .details-car-card__cta a {
   text-decoration: none;
-  font-size: 20px;
-  color: #F2F4F3;
+  width: 100%;
 }
 .details-car-card__cta a:hover {
   color: #F2F4F3;
+}
+.details-car-card__cta button {
+  padding: 8px 16px;
+}
+@media (max-width: 575px) {
+  .details-car-card__cta.mx-3 {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
 }
 .details-car-card__image-wrapper {
   height: 100%;
