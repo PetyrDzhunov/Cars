@@ -121,6 +121,7 @@ main {
 }
 .details-car-card__brand {
   color: #F2F4F3;
+  border-bottom: 4px solid #03DAC5;
 }
 .details-car-card__description {
   font-size: 40px;
@@ -262,6 +263,79 @@ main {
 .error-page__link {
   text-decoration: none;
   font-size: 18px;
+}
+
+.edit-car-form {
+  border: 3px solid #5E503F;
+  border-radius: 12px;
+  background-color: #22333B;
+  height: 1020px;
+  margin-top: auto;
+  padding-top: 25px;
+  width: 40%;
+  padding-bottom: 25px;
+}
+@media screen and (max-width: 1200px) {
+  .edit-car-form {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 576px) {
+  .edit-car-form {
+    width: 80%;
+  }
+}
+@media (max-width: 575px) {
+  .edit-car-form {
+    border: none;
+    border-radius: 0px;
+    width: 100%;
+  }
+}
+.edit-car-form__title {
+  color: #F2F4F3;
+  border-bottom: 1px solid #A9927D;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 12px;
+}
+.edit-car-form label {
+  color: #A9927D;
+  font-size: 22px;
+  padding-bottom: 4px;
+  margin-top: 8px;
+  text-align: center;
+  display: block;
+}
+.edit-car-form input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.edit-car-form input[placeholder] {
+  font-size: 22px;
+}
+.edit-car-form__group {
+  width: 80%;
+}
+.edit-car-form a {
+  width: 100%;
+  text-align: center;
+}
+.edit-car-form__button {
+  width: 80%;
+  border-radius: 8px;
+  color: #F2F4F3 !important;
+  background-color: #5E503F !important;
+  padding: 10px 18px !important;
+  font-size: 28px !important;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: 0.5s ease-out;
+}
+.edit-car-form__button:hover {
+  transition: 0.5s ease-out;
+  background-color: #0A0908 !important;
+  color: #F2F4F3 !important;
 }
 
 html {

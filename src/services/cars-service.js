@@ -19,6 +19,18 @@ const getCarById = (id) => {
     return Car.findById(id).lean();
 };
 
+const deleteById = async(carId, userId) => {
+    await User.findByIdAndUpdate(userId, { $pull: { carsOwned: carId } });
+    return Car.findByIdAndDelete(carId);
+};
+
+const editCarById = (newCarData, carId) => {
+    return Car.findByIdAndUpdate(carId, newCarData)
+};
+
+const addView = (carId) => {
+    return Car.findByIdAndUpdate(carId, { $inc: { views: 1 } })
+};
 
 
 
@@ -28,5 +40,8 @@ module.exports = {
     createOffer,
     getAllCars,
     getAllCarsByUserId,
-    getCarById
+    getCarById,
+    deleteById,
+    editCarById,
+    addView
 }

@@ -36,19 +36,55 @@ router.get('/my-cars', isUser, async(req, res) => {
 
 
 router.get('/:carId/details', async(req, res) => {
+    const carId = req.params.carId;
     try {
-        const car = await carService.getCarById(req.params.carId);
+        const car = await carService.getCarById(carId);
+        await carService.addView(carId);
         const isOwner = car.owner == req.user?._id;
         const context = {
             ...car,
             isOwner,
             title:`${car.brand} ${car.model} details page`
-        }
+        };
         res.render('cars/details', context );
     } catch (err) {
         const error = parseError(err);
         console.log(error);
         res.redirect('/');
+    };
+}); 
+
+
+router.get('/:carId/delete', isUser, async(req,res) => {
+    try{
+        await carService.deleteById(req.params.carId,req.user._id);
+        res.redirect('/cars/my-cars');
+    }catch(error){
+        const errors = parseError(err);
+        res.render(`cars/details`,errors);
+    }
+});
+
+
+router.get('/:carId/edit',isUser,async (req,res)=>{
+    const car = await carService.getCarById(req.params.carId);
+    const context = {
+        ...car,
+        title:`Edit your ${car.brand} ${car.model}`
+    }
+     res.render('cars/edit',context);
+});
+
+router.post('/:carId/edit',isUser,async(req,res)=>{
+    try{
+        await carService.editCarById(req.body,req.params.carId);
+        res.redirect('/cars/my-cars');
+    }catch(error){
+        const context = {
+            errors:parseError(err),
+            ...car,
+        }
+        res.render('cars/edit',context);
     };
 });
 
