@@ -1,8 +1,20 @@
 .details-car-card {
-    margin-top: 30px;
-    &__brand {}
+    height: 550px;
+    margin-top: 100px;
+    &__brand {
+        color: $white-primary;
+        border-bottom: 4px solid #03DAC5;
+    }
     &__description {
-        font-size: 22px;
+        font-size: 40px;
+        line-height: 30px;
+        color: $white-primary !important;
+        &-title {
+            font-size: 40px;
+        }
+    }
+    .first-letter {
+        color: #03DAC5;
     }
     &__cta {
         display: flex;
@@ -14,25 +26,31 @@
             justify-items: center;
             justify-content: center;
             align-items: center;
-            @for $i from 1 through 3 {
-                button:nth-child(3n + #{$i}) {
-                    width: 70%;
-                }
-            }
         }
         button {
-            width: 45%;
+            width: 100%;
             margin-bottom: 20px;
+            letter-spacing: 3px;
+            font-size: 32px;
+            color: $white-primary;
             &:hover {
                 background-color: $primary;
             }
         }
         a {
             text-decoration: none;
-            font-size: 20px;
-            color: $white-primary;
+            width: 100%;
             &:hover {
                 color: $white-primary;
+            }
+        }
+        button {
+            padding: 8px 16px;
+        }
+        @include for-phone-only {
+            &.mx-3 {
+                margin-right: 0px !important;
+                margin-left: 0px !important;
             }
         }
     }
