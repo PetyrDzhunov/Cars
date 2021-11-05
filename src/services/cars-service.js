@@ -36,6 +36,10 @@ const addToFavourites = (carId, userId) => {
     return User.findByIdAndUpdate(userId, { $push: { favouriteCars: carId } });
 };
 
+const removeFromFavourites = (carId, userId) => {
+    return User.findByIdAndUpdate(userId, { $pull: { favouriteCars: carId } });
+}
+
 
 
 
@@ -49,4 +53,5 @@ module.exports = {
     editCarById,
     addView,
     addToFavourites,
+    removeFromFavourites
 }

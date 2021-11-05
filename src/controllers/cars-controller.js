@@ -42,9 +42,12 @@ router.get('/:carId/details', async(req, res) => {
         const car = await carService.getCarById(carId);
         await carService.addView(carId);
         const isOwner = car.owner == req.user?._id;
+        const {favouriteCars} = await userService.getFavouriteCarsByUserId(req.user._id);
+        const hasItInFavourites = favouriteCars.some((car) => car._id == carId);
         const context = {
             ...car,
             isOwner,
+            hasItInFavourites,
             title:`${car.brand} ${car.model} details page`
         };
         res.render('cars/details', context );
@@ -94,7 +97,7 @@ router.get('/:carId/addToFavourites',isUser,async(req,res)=>{
         await carService.addToFavourites(req.params.carId,req.user._id);
         const favouriteCars = await userService.getFavouriteCarsByUserId(req.user._id);
         const context = {
-            favouriteCars,
+            ...favouriteCars,
             title:"My Favourite Cars"
         };
         res.render('cars/favourite-cars',context);
@@ -112,6 +115,19 @@ router.get('/favourite-cars',async (req,res)=>{
     res.render('cars/favourite-cars',context);
 });
 
+router.get('/:carId/removeFromFavourites',isUser,async (req,res)=>{
+    try{
+        await carService.removeFromFavourites(req.params.carId,req.user._id);
+        const car = await carService.getCarById(req.params.carId);
+        res.render('cars/details',car);
+    }catch(error){
+        const context = {
+            errors: parseError(error)
+        };
+        res.render('cars/details',context);
+    }
+
+});
 
 
 

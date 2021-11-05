@@ -134,11 +134,6 @@ main {
 .details-car-card .first-letter {
   color: #03DAC5;
 }
-.details-car-card__cta {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
 @media screen and (max-width: 740px) {
   .details-car-card__cta {
     display: flex;
@@ -186,6 +181,23 @@ main {
     margin-right: 0px !important;
     margin-left: 0px !important;
   }
+}
+.details-car-card__hasFavourite {
+  margin-right: 12px;
+}
+@media (max-width: 575px) {
+  .details-car-card__hasFavourite {
+    flex-direction: column !important;
+  }
+}
+.details-car-card__favourite {
+  font-size: 32px;
+  margin-bottom: 12px;
+  line-height: 30px;
+}
+.details-car-card__icon {
+  font-size: 32px;
+  margin-bottom: 12px;
 }
 
 .create-car-form {

@@ -20,7 +20,18 @@
             <a href="/cars/{{_id}}/edit"><button class="btn btn-secondary">Edit</button></a>
             {{else}}
             <a href="/cars/{{_id}}/buy"><button class="btn btn-secondary">Buy</button></a>
-            <a href="/cars/{{_id}}/addToFavourites"><button class="btn btn-secondary">Add to favourites</button></a>
+                {{#if hasItInFavourites}}
+             <div class="d-flex details-car-card__hasFavourite justify-content-between">
+                 <div class="d-flex flex-row">
+                <i class="fas fa-star details-car-card__icon"></i>
+                <p class="details-car-card__favourite">You have already added this car to your favourites!</p>
+                 </div>
+                <a href="/cars/{{_id}}/removeFromFavourites"><button class="btn btn-secondary">Remove from favourites</button></a>
+            </div> 
+                {{else}}
+              <a href="/cars/{{_id}}/addToFavourites"><button class="btn btn-secondary">Add to favourites</button></a>
+           
+                {{/if}}
             {{/if}}
         </div>
         {{/if}}
