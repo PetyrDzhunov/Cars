@@ -9,9 +9,7 @@ router.get('/create', (req, res) => {
 router.post('/create', async(req, res) => {
     const { brand, model, region, yearOfManufacture, engine, transmission, imageUrl, price } = req.body;
     try {
-        const car = await carService.createOffer({ brand, model, region, yearOfManufacture, engine, transmission, imageUrl, price, owner: req.user._id });
-        console.log(car._id);
-        console.log('created');
+        const car = await carService.createOffer({ brand, model, region, yearOfManufacture, engine, transmission, imageUrl, price, owner: req.user._id }, req.user_id);
         res.redirect('/');
     } catch (err) {
         const ctx = {
