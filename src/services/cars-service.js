@@ -11,9 +11,6 @@ const getAllCars = () => {
     return Car.find().lean();
 };
 
-const getAllCarsByUserId = (userId) => {
-    return Car.find({ owner: userId }).lean();
-};
 
 const getCarById = (id) => {
     return Car.findById(id).lean();
@@ -38,7 +35,8 @@ const addToFavourites = (carId, userId) => {
 
 const removeFromFavourites = (carId, userId) => {
     return User.findByIdAndUpdate(userId, { $pull: { favouriteCars: carId } });
-}
+};
+
 
 
 
@@ -47,7 +45,6 @@ const removeFromFavourites = (carId, userId) => {
 module.exports = {
     createOffer,
     getAllCars,
-    getAllCarsByUserId,
     getCarById,
     deleteById,
     editCarById,
