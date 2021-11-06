@@ -31,8 +31,21 @@ router.post('/create', isUser, async(req, res) => {
 });
 
 router.get('/my-cars', isUser, async(req, res) => {
-    const cars = await carService.getAllCarsByUserId(req.user._id);
-    res.render('cars/my-cars', { title: 'My cars page', cars });
+    const cars = await userService.getAllCarsByUserId(req.user._id);
+    const context = {
+        ...cars,
+        title:"My Cars Page"
+    };
+    console.log(cars);
+    res.render('cars/my-cars', context);
+
+
+    // const favouriteCars = await userService.getFavouriteCarsByUserId(req.user._id);
+    // const context = {
+    //     ...favouriteCars,
+    //     title:"My Favourite Cars"
+    // };
+    // res.render('cars/favourite-cars',context);
 });
 
 
@@ -114,6 +127,7 @@ router.get('/:carId/addToFavourites',isUser,async(req,res)=>{
 
 router.get('/favourite-cars',async (req,res)=>{
     const favouriteCars = await userService.getFavouriteCarsByUserId(req.user._id);
+    console.log(favouriteCars);
     const context = {
         ...favouriteCars,
         title:"My Favourite Cars"
@@ -132,8 +146,25 @@ router.get('/:carId/removeFromFavourites',isUser,async (req,res)=>{
         };
         res.render('cars/details',context);
     }
-
 });
+
+router.get('/:carId/buy',isUser,async (req,res) => {
+    const carId = req.params.carId;
+    try{
+        await userService.buyCarById(req.user._id,carId);
+        res.redirect('/cars/my-cars');
+    }catch(error){
+        console.log(error);
+    }
+    //buy the car only if you have the money;
+    
+    //if you have the money you buy it and 
+    //1 . remove the money from your current budget;
+    //2 . add the car you bought to your carsOwned array and change its owner
+    //3 . remove the car from the old owner and from his carsOwned array and add the money he sold the car for;
+
+
+}); 
 
 
 

@@ -22,7 +22,7 @@ exports.login = async({ email, password }) => {
         throw new Error('Invalid username or password');
     };
 
-    let payload = { _id: user._id, name: user.firstName, email: user.email, carsOwned: user.carsOwned };
+    let payload = { _id: user._id, name: user.firstName, email: user.email, carsOwned: user.carsOwned, budget: user.budget };
 
     let token = await jwt.sign(payload, JWT_SECRET);
     return token;

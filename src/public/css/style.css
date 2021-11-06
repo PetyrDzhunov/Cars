@@ -171,6 +171,10 @@ main {
 }
 .details-car-card__image-wrapper {
   height: 100%;
+  transition: 0.5s ease-out;
+}
+.details-car-card__image-wrapper:hover {
+  transform: scale(1.04);
 }
 .details-car-card__image-wrapper img {
   height: 100%;
