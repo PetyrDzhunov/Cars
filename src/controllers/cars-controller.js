@@ -36,7 +36,6 @@ router.get('/my-cars', isUser, async(req, res) => {
         ...cars,
         title:"My Cars Page"
     };
-    console.log(cars);
     res.render('cars/my-cars', context);
 
 
@@ -127,7 +126,6 @@ router.get('/:carId/addToFavourites',isUser,async(req,res)=>{
 
 router.get('/favourite-cars',async (req,res)=>{
     const favouriteCars = await userService.getFavouriteCarsByUserId(req.user._id);
-    console.log(favouriteCars);
     const context = {
         ...favouriteCars,
         title:"My Favourite Cars"

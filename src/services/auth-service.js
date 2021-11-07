@@ -1,13 +1,16 @@
 const User = require('../models/User');
 const { JWT_SECRET } = require('../constants');
 const jwt = require('../utils/jwt');
+const bcrypt = require('bcrypt');
+const { SALT_ROUNDS } = require('../constants');
 
 exports.register = async(userData) => {
     const existing = await User.findOne({ email: userData.email });
     if (existing) {
         throw new Error('Account with this email has already been created!');
     };
-    return User.create(userData);
+    let user = new User(userData);
+    return user.save();
 };
 
 exports.login = async({ email, password }) => {
@@ -17,7 +20,9 @@ exports.login = async({ email, password }) => {
         throw new Error('Invalid username or password');
     };
 
-    let isValid = await user.validatePassword(password);
+    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+    const isValid = await bcrypt.compare(password, hashedPassword);
+
     if (!isValid) {
         throw new Error('Invalid username or password');
     };
