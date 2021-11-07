@@ -22,6 +22,7 @@
                     <ul class="navbar-nav bg-dark ms-auto">
                         {{#if user}}     
                         <li class="nav-item"><a class="nav-link">Hello , {{user.name}}</a></li>
+                        <li class="nav-item"><a href="/search" class="nav-link">Search</a></li>
                         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                         <li class="nav-item"><a href="/cars/create" class="nav-link">Create new sale</a></li>
                         <li class="nav-item"><a href="/cars/my-cars" class="nav-link">My cars</a></li>
@@ -30,6 +31,7 @@
                         <li class="nav-item"><a class="nav-link" style="color: aqua !important;">Budget :{{user.budget}}</a></li>
                         
                         {{else}}
+                        <li class="nav-item"><a class="nav-link">Search</a></li>
                         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                         <li class="nav-item"><a href="/auth/login" class="nav-link">Login</a></li>
                         <li class="nav-item"><a href="/auth/register" class="nav-link">Register</a></li>

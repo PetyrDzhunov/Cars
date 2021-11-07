@@ -1,0 +1,21 @@
+.search-form {
+    height: 200px;
+    border-radius: 6px;
+    margin-top: 200px;
+    margin-left: 50px;
+    &__input {}
+    input[placeholder] {
+        font-size: 32px;
+        color: blueviolet;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    &__submit.btn {
+        color: $white-primary;
+        background-color: $secondary;
+        padding: 12px 24px;
+        font-size: 32px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+}

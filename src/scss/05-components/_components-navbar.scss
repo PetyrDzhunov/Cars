@@ -11,6 +11,7 @@
     ul li a {
         position: relative;
         z-index: 1;
+        line-height: 35px;
     }
     ul li a:after {
         display: block;
@@ -56,6 +57,7 @@
                 justify-items: center;
                 align-items: center;
                 justify-content: center;
+                line-height: 30px;
             }
             .nav-item {
                 border-bottom: solid 1px $white-primary;
@@ -72,7 +74,7 @@
             }
         }
     }
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width:1190px) {
         &-collapse {
             text-align: center;
             ul {
