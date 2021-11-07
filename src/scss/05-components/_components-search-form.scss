@@ -3,9 +3,15 @@
     border-radius: 6px;
     margin-top: 200px;
     margin-left: 50px;
+    @include for-phone-only {
+        margin-left: 8px;
+        input[placeholder] {
+            font-size: 28px !important;
+        }
+    }
     &__input {}
     input[placeholder] {
-        font-size: 32px;
+        font-size: 40px;
         color: blueviolet;
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;

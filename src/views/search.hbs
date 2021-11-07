@@ -1,15 +1,16 @@
 <main class="col-lg-12 col-sm-12 d-flex flex-row justify-content-start flex-wrap">
     <form class="search-form d-flex flex-column" method="GET">
-        <input type="search-form__input" name="text" placeholder="Search here...">
+        <input type="search-form__input" name="text" placeholder="Enter brand to search...">
         <button class="search-form__submit btn btn-secondary">Search</button>
     </form>
 
-  <section id="find-section">
-         {{#each cars}} {{> car-card}} {{else}} 
+  <section id="find-section d-flex">
+         {{#each cars}} 
+         {{> car-card}} 
+         {{else}} 
         <div class="no-data-listing">
             <p class="no-offer">No match was found for the submitted type...</p>
         </div>
         {{/each}} 
     </section>
-
 </main>
