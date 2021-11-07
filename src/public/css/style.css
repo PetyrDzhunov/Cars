@@ -589,6 +589,35 @@ li {
   margin: 0;
 }
 
+.search-form {
+  height: 200px;
+  border-radius: 6px;
+  margin-top: 200px;
+  margin-left: 50px;
+}
+@media (max-width: 575px) {
+  .search-form {
+    margin-left: 8px;
+  }
+  .search-form input[placeholder] {
+    font-size: 28px !important;
+  }
+}
+.search-form input[placeholder] {
+  font-size: 40px;
+  color: blueviolet;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.search-form__submit.btn {
+  color: #F2F4F3;
+  background-color: #22333B;
+  padding: 12px 24px;
+  font-size: 32px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
 .navbar {
   height: 120px;
 }
@@ -603,6 +632,7 @@ li {
 .navbar ul li a {
   position: relative;
   z-index: 1;
+  line-height: 35px;
 }
 .navbar ul li a:after {
   display: block;
@@ -648,6 +678,7 @@ li {
     justify-items: center;
     align-items: center;
     justify-content: center;
+    line-height: 30px;
   }
   .navbar-collapse .nav-item {
     border-bottom: solid 1px #F2F4F3;
@@ -663,7 +694,7 @@ li {
     margin-left: 0px;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1190px) {
   .navbar-collapse {
     text-align: center;
   }
@@ -775,59 +806,37 @@ li {
   bottom: auto;
 }
 
-.carousel-button.btn.btn-lg, .btn-group-lg > .carousel-button.btn {
+.trade-section__wrapper {
+  margin-top: 120px;
+}
+@media screen and (max-width: 625px) {
+  .trade-section__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 80px;
+    margin-top: 0px;
+  }
+}
+
+.trade-section__link {
   background-color: #A9927D;
   padding: 40px 60px;
   border-radius: 12px;
   outline: none;
   border: none;
-  margin-top: 40px;
-}
-.carousel-button.btn.btn-lg a, .btn-group-lg > .carousel-button.btn a {
-  color: #F2F4F3;
-  font-weight: bolder;
   font-size: 40px;
-  text-align: center;
   text-decoration: none;
+  margin-top: 120px;
 }
-.carousel-button.btn.btn-lg a:hover, .btn-group-lg > .carousel-button.btn a:hover {
-  color: #22333B;
+.trade-section__link:hover {
+  color: #F2F4F3;
 }
-@media screen and (max-width: 750px) {
-  .carousel-button.btn.btn-lg, .btn-group-lg > .carousel-button.btn {
-    margin-top: 30px;
-  }
-}
-@media (max-width: 1000px) {
-  .carousel-button.btn.btn-lg, .btn-group-lg > .carousel-button.btn {
-    margin-bottom: 10px;
-    padding: 20px 30px;
-  }
-  .carousel-button.btn.btn-lg a, .btn-group-lg > .carousel-button.btn a {
-    color: #0A0908;
-    font-weight: bolder;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-  }
-}
-@media (max-width: 575px) {
-  .carousel-button.btn.btn-lg, .btn-group-lg > .carousel-button.btn {
-    margin-bottom: 0px !important;
-    padding: 20px 30px;
-    margin-top: 30px;
-  }
-  .carousel-button.btn.btn-lg a, .btn-group-lg > .carousel-button.btn a {
-    color: #0A0908;
-    font-weight: bolder;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-  }
-}
-@media screen and (min-width: 750px) and (max-width: 1000px) {
-  .carousel-button.btn.btn-lg, .btn-group-lg > .carousel-button.btn {
-    margin-top: 40px;
+@media screen and (max-width: 625px) {
+  .trade-section__link {
+    padding: 10px 30px;
+    line-height: 30px;
   }
 }
 
@@ -927,7 +936,7 @@ li {
 .car-card {
   border: solid 1px #22333B;
   min-height: 800px;
-  width: 600px;
+  max-width: 600px;
   border-radius: 8px;
   margin-top: 30px;
   transition: 0.5s ease-out;

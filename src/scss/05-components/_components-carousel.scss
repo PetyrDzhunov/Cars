@@ -12,51 +12,37 @@
     bottom: auto;
 }
 
-.carousel-button.btn.btn-lg {
+.trade-section__wrapper {
+    margin-top: 120px;
+    @media screen and (max-width: 625px) {
+        & {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            margin-bottom: 80px;
+            margin-top: 0px;
+        }
+    }
+}
+
+.trade-section__link {
     background-color: $grullo-color;
     padding: 40px 60px;
     border-radius: 12px;
     outline: none;
     border: none;
-    margin-top: 40px;
-    a {
+    font-size: 40px;
+    text-decoration: none;
+    margin-top: 120px;
+    &:hover {
         color: $white-primary;
-        font-weight: bolder;
-        font-size: 40px;
-        text-align: center;
-        text-decoration: none;
-        &:hover {
-            color: $secondary;
+    }
+    @media screen and (max-width:625px) {
+        & {
+            padding: 10px 30px;
+            line-height: 30px;
         }
-    }
-    @media screen and (max-width:750px) {
-        margin-top: 30px;
-    }
-    @include for-tablet-landscape-up {
-        margin-bottom: 10px;
-        padding: 20px 30px;
-        a {
-            color: $primary;
-            font-weight: bolder;
-            font-size: 16px;
-            text-align: center;
-            text-decoration: none;
-        }
-    }
-    @include for-phone-only {
-        margin-bottom: 0px !important;
-        padding: 20px 30px;
-        margin-top: 30px;
-        a {
-            color: $primary;
-            font-weight: bolder;
-            font-size: 16px;
-            text-align: center;
-            text-decoration: none;
-        }
-    }
-    @media screen and (min-width:750px) and (max-width:1000px) {
-        margin-top: 40px;
     }
 }
 

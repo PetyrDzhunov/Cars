@@ -37,14 +37,6 @@ router.get('/my-cars', isUser, async(req, res) => {
         title:"My Cars Page"
     };
     res.render('cars/my-cars', context);
-
-
-    // const favouriteCars = await userService.getFavouriteCarsByUserId(req.user._id);
-    // const context = {
-    //     ...favouriteCars,
-    //     title:"My Favourite Cars"
-    // };
-    // res.render('cars/favourite-cars',context);
 });
 
 

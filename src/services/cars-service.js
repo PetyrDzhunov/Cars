@@ -37,6 +37,13 @@ const removeFromFavourites = (carId, userId) => {
     return User.findByIdAndUpdate(userId, { $pull: { favouriteCars: carId } });
 };
 
+const getAllCarsByQuery = async(query) => {
+    console.log(query)
+    let cars = await Car.find({}).lean();
+    cars = cars.filter((car) => car.brand.toLowerCase().includes(query));
+    return cars;
+};
+
 
 
 
@@ -50,5 +57,6 @@ module.exports = {
     editCarById,
     addView,
     addToFavourites,
-    removeFromFavourites
+    removeFromFavourites,
+    getAllCarsByQuery
 }
