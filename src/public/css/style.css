@@ -654,12 +654,28 @@ li {
 
 .filters-section__link {
   background-color: red;
-  width: 15% !important;
+  width: 20% !important;
   padding: 12px 24px !important;
   font-size: 32px !important;
 }
 .filters-section__link:hover {
   background-color: #0A0908 !important;
+}
+
+@media (max-width: 1000px) {
+  .filters-section.d-flex {
+    flex-flow: column !important;
+    width: 100%;
+    justify-content: center !important;
+    align-items: center;
+    justify-items: center;
+  }
+  .filters-section.d-flex .filters-section__link {
+    width: 70% !important;
+    margin: 10px 0px;
+    padding: 24px 6px;
+    font-size: 24px;
+  }
 }
 
 .navbar {
