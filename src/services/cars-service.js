@@ -37,14 +37,11 @@ const removeFromFavourites = (carId, userId) => {
     return User.findByIdAndUpdate(userId, { $pull: { favouriteCars: carId } });
 };
 
-const getAllCarsByQuery = async(query) => {
-    if (query == '') {
+const getAllCarsByQuery = (query) => {
+    if (query == '' || query == undefined) {
         return;
     };
-    console.log(query);
-    let cars = await Car.find({ brand: { $regex: query, $options: '-i' } }).lean();
-    console.log(cars);
-    return cars;
+    return Car.find({ brand: { $regex: query, $options: '-i' } }).lean();
 };
 
 
