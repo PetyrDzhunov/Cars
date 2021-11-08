@@ -45,10 +45,6 @@ const getAllCarsByQuery = (query) => {
 };
 
 
-
-
-
-
 module.exports = {
     createOffer,
     getAllCars,

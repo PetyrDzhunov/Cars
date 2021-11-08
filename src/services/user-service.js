@@ -26,13 +26,17 @@ const buyCarById = async(userId, carId) => {
         buyer.carsOwned.push(carToBeTraded._id);
 
         buyer.budget -= carToBeTraded.price;
-        res.locals.user.budget = buyer.budget;
         await buyer.save({ validateBeforeSave: false });
         await carToBeTraded.save({ validateBeforeSave: false });
         await seller.save({ validateBeforeSave: false });
+        return buyer.budget;
     } else {
         throw new Error("You don't have enough money to buy this car!");
     }
+};
+
+const getBudgetById = (userId) => {
+    return User.findById(userId).select('budget').lean();
 };
 
 
@@ -42,5 +46,6 @@ const buyCarById = async(userId, carId) => {
 module.exports = {
     getFavouriteCarsByUserId,
     buyCarById,
-    getAllCarsByUserId
+    getAllCarsByUserId,
+    getBudgetById
 }
