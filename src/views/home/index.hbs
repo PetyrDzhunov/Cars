@@ -1,4 +1,4 @@
-<div id="carouselExampleControls" class="carousel slide min-vh-100" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide min-vh-100 mb-5" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="carousel-caption d-sm-block">
@@ -32,8 +32,16 @@
         </a>
 </div>
 
-
+<div class="filters-section d-flex flex-row justify-content-around">
+               <a href='/sortByPrice' class='filters-section__link btn btn-secondary text-center text-white mx-3'>
+             Sort by Price
+            </a>
+               <a href='/sortByViews' class='filters-section__link btn btn-secondary text-center text-white mx-3'>
+             Sort by Views
+            </a>
+        </div>
 <main class="col-lg-12 col-sm-12 d-flex flex-row justify-content-center align-items-center flex-wrap" id="trade-section">
+        
     {{#each cars}}
     {{>car-card}}
     {{else}}

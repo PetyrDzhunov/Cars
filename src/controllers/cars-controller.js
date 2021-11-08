@@ -12,9 +12,11 @@ router.get('/create', async(req, res) => {
 router.post('/create', isUser, async(req, res) => {
     const { brand, model, region, yearOfManufacture, engine, gearbox, imageUrl, price } = req.body;
     try {
+        
         const car = await carService.createOffer({ brand, model, region, yearOfManufacture, engine, gearbox, imageUrl, price, owner: req.user._id });
         res.redirect('/');
     } catch (err) {
+    const { budget } = await userService.getBudgetById(req.user._id);
         const ctx = {
             errors: parseError(err),
             title: "Create new car sale",
@@ -25,7 +27,8 @@ router.post('/create', isUser, async(req, res) => {
             engine,
             gearbox,
             imageUrl,
-            price
+            price,
+            budget
         };
         res.render('cars/create', ctx);
     }
@@ -45,12 +48,12 @@ router.get('/my-cars', isUser, async(req, res) => {
 
 router.get('/:carId/details', async(req, res) => {
     const carId = req.params.carId;
-    const { budget } = await userService.getBudgetById(req.user._id);
     try {
         const car = await carService.getCarById(carId);
         await carService.addView(carId);
         let context;
         if (req.user) {
+            const { budget } = await userService.getBudgetById(req.user._id);
             const isOwner = car.owner == req.user?._id;
             const { favouriteCars } = await userService.getFavouriteCarsByUserId(req.user?._id);
             const hasItInFavourites = favouriteCars.some((car) => car._id == carId);
@@ -111,11 +114,13 @@ router.post('/:carId/edit', isUser, async(req, res) => {
 
 router.get('/:carId/addToFavourites', isUser, async(req, res) => {
     try {
+    const { budget } = await userService.getBudgetById(req.user._id);
         await carService.addToFavourites(req.params.carId, req.user._id);
         const favouriteCars = await userService.getFavouriteCarsByUserId(req.user._id);
         const context = {
             ...favouriteCars,
-            title: "My Favourite Cars"
+            title: "My Favourite Cars",
+            budget
         };
         res.render('cars/favourite-cars', context);
     } catch (err) {
@@ -136,9 +141,11 @@ router.get('/favourite-cars', async(req, res) => {
 
 router.get('/:carId/removeFromFavourites', isUser, async(req, res) => {
     try {
+    const { budget } = await userService.getBudgetById(req.user._id);
         await carService.removeFromFavourites(req.params.carId, req.user._id);
         const car = await carService.getCarById(req.params.carId);
-        res.render('cars/details', car);
+        const context = {...car,budget};
+        res.render('cars/details', context);
     } catch (error) {
         const context = {
             errors: parseError(error)
@@ -149,12 +156,22 @@ router.get('/:carId/removeFromFavourites', isUser, async(req, res) => {
 
 router.get('/:carId/buy', isUser, async(req, res) => {
     const carId = req.params.carId;
+
     try {
        await userService.buyCarById(req.user._id, carId); 
         res.redirect('/cars/my-cars');
-    } catch (error) {
-        console.log(error);
-    }
+    } catch (err) {
+    const { budget } = await userService.getBudgetById(req.user._id);
+        let errors = parseError(err)
+        let car =await carService.getCarById(carId);
+        console.log(car);
+        const context = {
+            ...car,
+            errors,
+            budget
+        };
+        res.render('cars/details',context);
+    };
 });
 
 
