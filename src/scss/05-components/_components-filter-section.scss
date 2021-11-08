@@ -1,11 +1,27 @@
 .filters-section {
     &__link {
         background-color: red;
-        width: 15% !important;
+        width: 20% !important;
         padding: 12px 24px !important;
         font-size: 32px !important;
         &:hover {
             background-color: $primary !important;
+        }
+    }
+}
+
+.filters-section.d-flex {
+    @include for-tablet-landscape-up {
+        flex-flow: column !important;
+        width: 100%;
+        justify-content: center !important;
+        align-items: center;
+        justify-items: center;
+        .filters-section__link {
+            width: 70% !important;
+            margin: 10px 0px;
+            padding: 24px 6px;
+            font-size: 24px;
         }
     }
 }
