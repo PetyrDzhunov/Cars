@@ -12,9 +12,11 @@
     &__input {}
     input[placeholder] {
         font-size: 40px;
-        color: blueviolet;
+        color: $primary;
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
+        text-align: center;
+        padding-top: 12px;
     }
     &__submit.btn {
         color: $white-primary;
@@ -23,5 +25,14 @@
         font-size: 32px;
         border-bottom-left-radius: 6px;
         border-bottom-right-radius: 6px;
+    }
+}
+
+.find-section__notFound {
+    &-wrapper {}
+    &-description {
+        font-size: 32px;
+        text-align: center;
+        color: $primary;
     }
 }

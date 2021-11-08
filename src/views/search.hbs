@@ -4,12 +4,12 @@
         <button class="search-form__submit btn btn-secondary">Search</button>
     </form>
 
-  <section id="find-section d-flex">
+  <section class="find-section d-flex justify-content-center align-items-center mx-3 flex-wrap">
          {{#each cars}} 
          {{> car-card}} 
          {{else}} 
-        <div class="no-data-listing">
-            <p class="no-offer">No match was found for the submitted type...</p>
+        <div class="find-section__notFound-wrapper">
+            <p class="find-section__notFound-description">No match was found for the submitted brand...</p>
         </div>
         {{/each}} 
     </section>

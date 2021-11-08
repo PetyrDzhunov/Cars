@@ -605,9 +605,11 @@ li {
 }
 .search-form input[placeholder] {
   font-size: 40px;
-  color: blueviolet;
+  color: #0A0908;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  text-align: center;
+  padding-top: 12px;
 }
 .search-form__submit.btn {
   color: #F2F4F3;
@@ -616,6 +618,12 @@ li {
   font-size: 32px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+}
+
+.find-section__notFound-description {
+  font-size: 32px;
+  text-align: center;
+  color: #0A0908;
 }
 
 .navbar {

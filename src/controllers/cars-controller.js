@@ -146,14 +146,6 @@ router.get('/:carId/buy',isUser,async (req,res) => {
     }catch(error){
         console.log(error);
     }
-    //buy the car only if you have the money;
-    
-    //if you have the money you buy it and 
-    //1 . remove the money from your current budget;
-    //2 . add the car you bought to your carsOwned array and change its owner
-    //3 . remove the car from the old owner and from his carsOwned array and add the money he sold the car for;
-
-
 }); 
 
 

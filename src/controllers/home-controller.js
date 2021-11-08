@@ -8,7 +8,7 @@ router.get('/', async(req, res) => {
 
 router.get('/search', async(req, res) => {
     const cars = await carService.getAllCarsByQuery(req.query.text);
-    console.log(cars);
+    // console.log(cars);
     res.render('search', { title: 'Search Cars', cars });
 });
 
