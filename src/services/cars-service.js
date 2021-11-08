@@ -44,7 +44,6 @@ const getAllCarsByQuery = async(query) => {
     console.log(query);
     let cars = await Car.find({ brand: { $regex: query, $options: '-i' } }).lean();
     console.log(cars);
-    // cars = cars.filter((car) => car.brand.toLowerCase().includes(query));
     return cars;
 };
 
