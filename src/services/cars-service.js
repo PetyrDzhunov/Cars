@@ -44,6 +44,14 @@ const getAllCarsByQuery = (query) => {
     return Car.find({ brand: { $regex: query, $options: '-i' } }).lean();
 };
 
+const getAllCarsSortedBy = (sortingType) => {
+    if (sortingType === 'price') {
+        return Car.find({}).sort({ 'price': 1 }).lean();
+    };
+    if (sortingType === 'views') {
+        return Car.find({}).sort({ 'views': -1 }).lean();
+    };
+}
 
 module.exports = {
     createOffer,
@@ -54,5 +62,6 @@ module.exports = {
     addView,
     addToFavourites,
     removeFromFavourites,
-    getAllCarsByQuery
+    getAllCarsByQuery,
+    getAllCarsSortedBy
 }

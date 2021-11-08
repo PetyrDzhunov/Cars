@@ -32,6 +32,34 @@ router.get('/search', async(req, res) => {
     };
 });
 
+router.get('/sortByPrice', async(req, res) => {
+    const cars = await carService.getAllCarsSortedBy('price');
+    console.log(cars);
+    if (req.user) {
+        const { budget } = await userService.getBudgetById(req.user._id);
+        const context = {
+            cars,
+            budget,
+        };
+        res.render('home', { title: 'Car market homepage', ...context })
+    } else {
+        res.render('home', { title: 'Car market homepage', cars });
+    };
+});
+
+router.get('/sortByViews', async(req, res) => {
+    const cars = await carService.getAllCarsSortedBy('views');
+    if (req.user) {
+        const { budget } = await userService.getBudgetById(req.user._id);
+        const context = {
+            cars,
+            budget,
+        };
+        res.render('home', { title: 'Car market homepage', ...context })
+    } else {
+        res.render('home', { title: 'Car market homepage', cars });
+    };
+});
 
 
 module.exports = router;

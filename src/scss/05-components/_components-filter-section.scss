@@ -1,0 +1,11 @@
+.filters-section {
+    &__link {
+        background-color: red;
+        width: 15% !important;
+        padding: 12px 24px !important;
+        font-size: 32px !important;
+        &:hover {
+            background-color: $primary !important;
+        }
+    }
+}
