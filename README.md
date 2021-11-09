@@ -1,7 +1,7 @@
 # Cars-shop
 https://cars-sales-shop.herokuapp.com/
 
-Cars-shop is a MPA application builded with express with server-side rendering.
+Cars-shop is a MPA(multi-page application) application builded with express with server-side rendering.
 The project is build upon the MVC design pattern.
 For database I am using noSQL mongoDB cloud database.
 For view engine I am using express-handlebars.
